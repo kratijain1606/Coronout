@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gocorona/Screens/World.dart';
 
 void main() => runApp(Gocorona());
 
@@ -23,7 +24,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   List<Widget> _widgetOptions = [
-
+    World(),
+    World(),
+    World(),
+    World(),
+    World()
   ];
 
   void _onItemTapped(int index) {
