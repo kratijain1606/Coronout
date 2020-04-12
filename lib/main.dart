@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gocorona/Screens/Around.dart';
+import 'package:gocorona/Screens/Home.dart';
 import 'package:gocorona/Screens/World.dart';
 
 void main() => runApp(Gocorona());
@@ -25,8 +27,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   List<Widget> _widgetOptions = [
     World(),
-    World(),
-    World(),
+    Around(),
+    Home(),
     World(),
     World()
   ];
@@ -50,8 +52,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: Text('Help'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_grocery_store),
-            title: Text('Food'),
+            icon: Icon(Icons.navigation),
+            title: Text('Around'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
