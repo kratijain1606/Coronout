@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gocorona/Screens/Around.dart';
 import 'package:gocorona/Screens/Emergency.dart';
 import 'package:gocorona/Screens/Home.dart';
-import 'package:gocorona/Screens/Stats.dart';
+import 'package:gocorona/Screens/IndiaStats.dart';
 import 'package:gocorona/Screens/Update.dart';
+import 'package:gocorona/Screens/WorldStats.dart';
 
 
 void main() => runApp(Gocorona());
@@ -29,11 +30,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   List<Widget> _widgetOptions = [
-    Around(),
+    //Around(),
+    Emergency(),
     Update(),
     Home(),
-    Stats(),
-    Emergency()
+    WorldStats(),
+    IndiaStats(),
   ];
 
   void _onItemTapped(int index) {
@@ -51,9 +53,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
+          /*BottomNavigationBarItem(
             icon: Icon(Icons.near_me),
             title: Text('Around'),
+          ),*/
+          BottomNavigationBarItem(
+            icon: Icon(Icons.warning),
+            title: Text('Emergency'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.update),
@@ -65,12 +71,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.insert_chart),
-            title: Text('Stats'),
+            title: Text('World'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.warning),
-            title: Text('Emergency'),
+            icon: Icon(Icons.insert_chart),
+            title: Text('India'),
           ),
+          
         ],
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
