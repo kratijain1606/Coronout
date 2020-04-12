@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gocorona/Screens/World.dart';
+import 'package:gocorona/Screens/Around.dart';
+import 'package:gocorona/Screens/Emergency.dart';
+import 'package:gocorona/Screens/Home.dart';
+import 'package:gocorona/Screens/Stats.dart';
+import 'package:gocorona/Screens/Update.dart';
+
 
 void main() => runApp(Gocorona());
 
@@ -24,11 +29,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   List<Widget> _widgetOptions = [
-    World(),
-    World(),
-    World(),
-    World(),
-    World()
+    Around(),
+    Update(),
+    Home(),
+    Stats(),
+    Emergency()
   ];
 
   void _onItemTapped(int index) {
@@ -43,15 +48,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.help),
-            title: Text('Help'),
+            icon: Icon(Icons.near_me),
+            title: Text('Around'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_grocery_store),
-            title: Text('Food'),
+            icon: Icon(Icons.update),
+            title: Text('Updates'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -59,18 +65,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.insert_chart),
-            title: Text('India'),
+            title: Text('Stats'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.language),
-            title: Text('World'),
+            icon: Icon(Icons.warning),
+            title: Text('Emergency'),
           ),
         ],
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
         showUnselectedLabels: true,
         onTap: _onItemTapped,
-        selectedIconTheme: IconThemeData(size: 40, color: Colors.black),
+        selectedIconTheme: IconThemeData(size: 40, color: Colors.blueAccent),
       ),
     );
   }
