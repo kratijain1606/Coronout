@@ -4,12 +4,12 @@ import 'package:gocorona/Widgets/chart.dart';
 import 'package:gocorona/Widgets/details.dart';
 import 'package:flutter/material.dart';
 
-class World extends StatefulWidget {
+class WorldStats extends StatefulWidget {
   @override
-  _WorldState createState() => _WorldState();
+  _WorldStatsState createState() => _WorldStatsState();
 }
 
-class _WorldState extends State<World> {
+class _WorldStatsState extends State<WorldStats> {
   Report _report;
   int fallback = 0;
 

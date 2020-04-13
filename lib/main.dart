@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gocorona/Screens/World.dart';
+import 'package:gocorona/Screens/Around.dart';
+import 'package:gocorona/Screens/Emergency.dart';
+import 'package:gocorona/Screens/Home.dart';
+import 'package:gocorona/Screens/IndiaStats.dart';
+import 'package:gocorona/Screens/Update.dart';
+import 'package:gocorona/Screens/WorldStats.dart';
+
 
 import 'package:gocorona/Screens/SymptomsPage.dart';
 import 'package:gocorona/Screens/PreventionPage.dart';
@@ -39,11 +45,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   List<Widget> _widgetOptions = [
+<<<<<<< HEAD
     Help(),
     World(),
     World(),
     World(),
     World()
+=======
+    //Around(),
+    Emergency(),
+    Update(),
+    Home(),
+    WorldStats(),
+    IndiaStats(),
+>>>>>>> ffd128053084e5082cd3a30d4b02d6fb551906ec
   ];
 
   void _onItemTapped(int index) {
@@ -60,15 +75,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          /*BottomNavigationBarItem(
+            icon: Icon(Icons.near_me),
+            title: Text('Around'),
+          ),*/
           BottomNavigationBarItem(
-            icon: Icon(Icons.help),
-            title: Text('Help'),
+            icon: Icon(Icons.warning),
+            title: Text('Emergency'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_grocery_store),
-            title: Text('Food'),
+            icon: Icon(Icons.update),
+            title: Text('Updates'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -76,18 +96,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.insert_chart),
-            title: Text('India'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.language),
             title: Text('World'),
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.insert_chart),
+            title: Text('India'),
+          ),
+          
         ],
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
         showUnselectedLabels: true,
         onTap: _onItemTapped,
-        selectedIconTheme: IconThemeData(size: 40, color: Colors.black),
+        selectedIconTheme: IconThemeData(size: 40, color: Colors.blueAccent),
       ),
 
       
