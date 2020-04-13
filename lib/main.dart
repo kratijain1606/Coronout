@@ -3,6 +3,9 @@ import 'package:gocorona/Screens/Around.dart';
 import 'package:gocorona/Screens/Home.dart';
 import 'package:gocorona/Screens/World.dart';
 import 'package:gocorona/Screens/India.dart';
+import 'package:gocorona/Screens/SymptomsPage.dart';
+import 'package:gocorona/Screens/PreventionPage.dart';
+import 'package:gocorona/Screens/Help.dart';
 
 void main() => runApp(Gocorona());
 
@@ -10,6 +13,10 @@ class Gocorona extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/symptoms': (context) => SymptomsPage(),
+        '/prevention': (context) => PreventionPage(),
+      },
       home: MyStatefulWidget(),
     );
   }
@@ -26,13 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
-  List<Widget> _widgetOptions = [
-    World(),
-    Around(),
-    Home(),
-    India(),
-    World()
-  ];
+  List<Widget> _widgetOptions = [Help(), Around(), Home(), India(), World()];
 
   void _onItemTapped(int index) {
     setState(() {
