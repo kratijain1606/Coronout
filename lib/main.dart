@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gocorona/Screens/Around.dart';
-import 'package:gocorona/Screens/Emergency.dart';
+// import 'package:gocorona/Screens/Around.dart';
+// import 'package:gocorona/Screens/Emergency.dart';
 import 'package:gocorona/Screens/Home.dart';
 import 'package:gocorona/Screens/IndiaStats.dart';
 import 'package:gocorona/Screens/Update.dart';
@@ -22,11 +22,11 @@ class Gocorona extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false,
       routes: {
         // '/': (context) => World(),
-        '/reports': (context) => World(),
+        '/reports': (context) => WorldStats(),
         '/symptoms': (context) => SymptomsPage(),
         '/prevention': (context) => PreventionPage(),
         '/requirements': (context) => Require(),
-        '/countryReport': (context) => World(),
+        '/countryReport': (context) => WorldStats(),
       },
       home: MyStatefulWidget(),
     );
@@ -45,20 +45,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   List<Widget> _widgetOptions = [
-<<<<<<< HEAD
-    Help(),
-    World(),
-    World(),
-    World(),
-    World()
-=======
+
     //Around(),
-    Emergency(),
+   Help(),
     Update(),
     Home(),
     WorldStats(),
     IndiaStats(),
->>>>>>> ffd128053084e5082cd3a30d4b02d6fb551906ec
   ];
 
   void _onItemTapped(int index) {

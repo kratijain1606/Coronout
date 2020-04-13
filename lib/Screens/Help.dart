@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gocorona/Widgets/homeNavItems.dart';
-import 'package:gocorona/Widgets/requirements.dart';
+// import 'package:gocorona/Widgets/requirements.dart';
 class Help extends StatefulWidget{
 _Help createState() => _Help();
 }
