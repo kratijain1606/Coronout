@@ -13,6 +13,7 @@ class Gocorona extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         '/symptoms': (context) => SymptomsPage(),
         '/prevention': (context) => PreventionPage(),
