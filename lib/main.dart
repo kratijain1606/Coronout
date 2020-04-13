@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:gocorona/Screens/World.dart';
 
+import 'package:gocorona/Screens/SymptomsPage.dart';
+import 'package:gocorona/Screens/PreventionPage.dart';
+
+import 'package:gocorona/Screens/Require.dart';
+
+import 'package:gocorona/Screens/Help.dart';
+
 void main() => runApp(Gocorona());
 
 class Gocorona extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
+      routes: {
+        // '/': (context) => World(),
+        '/reports': (context) => World(),
+        '/symptoms': (context) => SymptomsPage(),
+        '/prevention': (context) => PreventionPage(),
+        '/requirements': (context) => Require(),
+        '/countryReport': (context) => World(),
+      },
       home: MyStatefulWidget(),
     );
   }
@@ -24,7 +39,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   List<Widget> _widgetOptions = [
-    World(),
+    Help(),
     World(),
     World(),
     World(),
@@ -39,7 +54,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+      
+    Scaffold(
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -72,6 +89,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         onTap: _onItemTapped,
         selectedIconTheme: IconThemeData(size: 40, color: Colors.black),
       ),
+
+      
     );
-  }
+    
+      
+      
+      
+    //  return  Container(width:0.0,height:0.0);
+       }
 }
