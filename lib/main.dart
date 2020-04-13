@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gocorona/Screens/Around.dart';
 import 'package:gocorona/Screens/Home.dart';
 import 'package:gocorona/Screens/World.dart';
+import 'package:gocorona/Screens/India.dart';
 
 void main() => runApp(Gocorona());
 
@@ -29,7 +30,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     World(),
     Around(),
     Home(),
-    World(),
+    India(),
     World()
   ];
 
