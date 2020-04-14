@@ -10,6 +10,7 @@ class IReport {
     try {
       Response response = await get(link);
       List data = jsonDecode(response.body);
+      print(data);
       for (int i = 0; i < data.length; i++) {
         List lst = jsonDecode(jsonEncode(data[i]["districtData"]));
         List<Districts> distlist = [];
