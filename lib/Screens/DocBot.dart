@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Emergency extends StatefulWidget {
+class DocBot extends StatefulWidget {
   @override
-  _EmergencyState createState() => _EmergencyState();
+  _DocBotState createState() => _DocBotState();
 }
 
-class _EmergencyState extends State<Emergency> {
+class _DocBotState extends State<DocBot> {
 
   @override
   void initState() {
@@ -21,7 +21,7 @@ class _EmergencyState extends State<Emergency> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Emergency',
+          'Mrs. Doc Bot',
           style: Theme.of(context).textTheme.title,
         ),
         backgroundColor: Colors.white,

@@ -19,44 +19,19 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 icon: Icons.mood_bad,
                 title: 'Symptoms',
                 subTitle: 'Signs to Identify the risk of Infection',
-                navigate: 'symptoms'),
+                navigate: 'symptoms',
+                color: Colors.deepPurpleAccent),
             SizedBox(
               width: 16.0,
             ),
             getHomePageNavItems(
                 context: context,
                 icon:Icons.local_hospital,
-                
                 title: 'Prevention',
-                subTitle: 'Help you to avoid getting infected',
-                navigate: 'prevention'
+                subTitle: 'Help you to avoid getting infected, Stay Safe.',
+                navigate: 'prevention',
+                color: Colors.lightBlueAccent,
                 ),
-          ],
-        ),
-        SizedBox(
-          height:30.0,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            getHomePageNavItems(
-                context: context,
-                icon: Icons.insert_chart,
-                title: 'Reports',
-                subTitle: 'Data and info related to the disease',
-                navigate: 'reports'
-                ),
-            SizedBox(
-              width: 16.0,
-            ),
-            getHomePageNavItems(
-                context: context,
-                icon:Icons.check_box,
-                // icon: FontAwesomeIcons.globeAmericas,
-                title: 'Requirements',
-                
-                subTitle:   "Help you to prevent viruses better",
-                navigate: 'requirements'),
           ],
         ),
         SizedBox(
@@ -68,7 +43,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
 }
 
 Widget getHomePageNavItems(
-    {BuildContext context, IconData icon, String title, String subTitle, String navigate}) {
+    {BuildContext context, IconData icon, String title, String subTitle, String navigate, Color color}) {
   return Expanded(
     child: InkWell(
       onTap: (){
@@ -77,7 +52,7 @@ Widget getHomePageNavItems(
       child: Container(
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-            color: Color(0xFFB5EBF5),
+            color: color,
             borderRadius: BorderRadius.all(Radius.circular(5.0))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,7 +60,7 @@ Widget getHomePageNavItems(
             Icon(
               icon,
               size: 50.0,
-              color: Colors.black,
+              color: Colors.white,
             ),
             SizedBox(
               height: 40.0,
@@ -95,7 +70,7 @@ Widget getHomePageNavItems(
               style: Theme.of(context)
                   .textTheme
                   .title
-                  .copyWith(color: Colors.black,
+                  .copyWith(color: Colors.white,
                   fontSize: 20.0),
             ),
             SizedBox(
@@ -104,8 +79,8 @@ Widget getHomePageNavItems(
             Text(
               subTitle,
               style: Theme.of(context).textTheme.caption.copyWith(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w100,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
                   fontSize: 15.0),
             ),
           ],
