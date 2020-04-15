@@ -1,4 +1,3 @@
-  
 import 'package:gocorona/Widgets/symptomsItems.dart';
 import 'package:flutter/material.dart';
 
@@ -7,13 +6,15 @@ class SymptomsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      title: Text('Symptoms',
-      style: Theme.of(context).textTheme.title,),
-       backgroundColor: Colors.white,
+        title: Text(
+          'Symptoms',
+          style: Theme.of(context).textTheme.title,
+        ),
+        backgroundColor: Colors.white,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
-    ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -50,7 +51,7 @@ class SymptomsPage extends StatelessWidget {
                       horizontal: 16.0,
                     ),
                     decoration: BoxDecoration(
-                        color: Color(0xFF1E3CFF),
+                        color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(5.0)),
                     child: FlatButton.icon(
                         onPressed: () {

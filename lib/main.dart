@@ -55,7 +55,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: Text('Help'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.navigation),
+            icon: Icon(Icons.near_me),
             title: Text('Around'),
           ),
           BottomNavigationBarItem(
