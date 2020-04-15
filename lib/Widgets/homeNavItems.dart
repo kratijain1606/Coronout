@@ -19,17 +19,18 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 icon: Icons.mood_bad,
                 title: 'Symptoms',
                 subTitle: 'Signs to Identify the risk of Infection',
-                navigate: 'symptoms'),
+                navigate: 'symptoms',
+                color: Colors.deepPurpleAccent),
             SizedBox(
               width: 16.0,
             ),
             getHomePageNavItems(
                 context: context,
                 icon:Icons.local_hospital,
-                
                 title: 'Prevention',
-                subTitle: 'Help you to avoid getting infected',
-                navigate: 'prevention'
+                subTitle: 'Help you to avoid getting infected.',
+                navigate: 'prevention',
+                color: Colors.lightBlueAccent,
                 ),
           ],
         ),
@@ -42,7 +43,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
 }
 
 Widget getHomePageNavItems(
-    {BuildContext context, IconData icon, String title, String subTitle, String navigate}) {
+    {BuildContext context, IconData icon, String title, String subTitle, String navigate, Color color}) {
   return Expanded(
     child: InkWell(
       onTap: (){
@@ -51,7 +52,7 @@ Widget getHomePageNavItems(
       child: Container(
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-            color: Colors.black,
+            color: color,
             borderRadius: BorderRadius.all(Radius.circular(5.0))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
