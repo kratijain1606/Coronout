@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gocorona/Models/newsmodel.dart';
+import 'package:gocorona/Screens/Donate.dart';
 import 'package:gocorona/Services/news.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -33,6 +34,13 @@ class _HomeState extends State<Home> {
               title: Text(
                 'Home',
                 style: TextStyle(color: Colors.black),
+              ),
+              leading: IconButton(
+                icon: const Icon(Icons.monetization_on),
+                onPressed: () { 
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Donate()));
+                            
+                },
               ),
               centerTitle: true,
               backgroundColor: Colors.white,
