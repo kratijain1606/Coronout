@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gocorona/Screens/DistrictReport.dart';
+import 'package:gocorona/Screens/India/DistrictReport.dart';
 import 'package:gocorona/Services/ireports.dart';
 import 'package:gocorona/Models/indiamodel.dart';
 import 'package:loading/indicator/ball_pulse_indicator.dart';

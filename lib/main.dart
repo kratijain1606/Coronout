@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gocorona/Screens/Around.dart';
-import 'package:gocorona/Screens/Home.dart';
-import 'package:gocorona/Screens/World.dart';
-import 'package:gocorona/Screens/India.dart';
-import 'package:gocorona/Screens/SymptomsPage.dart';
-import 'package:gocorona/Screens/PreventionPage.dart';
-import 'package:gocorona/Screens/Help.dart';
+import 'package:gocorona/Screens/Around/Around.dart';
+import 'package:gocorona/Screens/Home/Home.dart';
+import 'package:gocorona/Screens/World/World.dart';
+import 'package:gocorona/Screens/India/India.dart';
+import 'package:gocorona/Screens/Help/SymptomsPage.dart';
+import 'package:gocorona/Screens/Help/PreventionPage.dart';
+import 'package:gocorona/Screens/Help/Help.dart';
 
 void main() => runApp(Gocorona());
 

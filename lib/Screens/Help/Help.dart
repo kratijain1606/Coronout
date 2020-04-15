@@ -1,5 +1,5 @@
-import 'package:gocorona/Screens/DocBot.dart';
-import 'package:gocorona/Screens/SymptomsChecker.dart';
+import 'package:gocorona/Screens/Help/DocBot.dart';
+import 'package:gocorona/Screens/Help/SymptomsChecker.dart';
 import 'package:gocorona/Widgets/homeNavItems.dart';
 import 'package:gocorona/Widgets/Requirements.dart';
 import 'package:flutter/cupertino.dart';
