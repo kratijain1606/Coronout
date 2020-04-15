@@ -11,20 +11,18 @@ class _PreventioPageState extends State<PreventionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Prevention",style: Theme.of(context).textTheme.title,
-        ),backgroundColor: Colors.white,
+      title: Text('Prevention',
+      style: Theme.of(context).textTheme.title,),
+       backgroundColor: Colors.white,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
-        
-      ),
+    ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Container(
               padding: EdgeInsets.all(16.0),
-              color: Color.fromRGBO(0,255,255,0),
               child: PreventionItems(),
             ),
             Image.asset('assets/images/doctor1.jpg'),
@@ -53,11 +51,11 @@ class _PreventioPageState extends State<PreventionPage> {
                       horizontal: 16.0,
                     ),
                     decoration: BoxDecoration(
-                        color: Color(0xFFB5EBF5),
+                        color: Color(0xFF1E3CFF),
                         borderRadius: BorderRadius.circular(5.0)),
                     child: FlatButton.icon(
                         onPressed: () {
-                          // launchUrl();
+                          launchUrl();
                         },
                         icon: Icon(Icons.open_in_new, color: Colors.white),
                         label: Text(
