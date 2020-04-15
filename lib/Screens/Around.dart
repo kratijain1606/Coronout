@@ -1,7 +1,3 @@
-
-import 'package:gocorona/Services/reports.dart';
-import 'package:gocorona/Widgets/chart.dart';
-import 'package:gocorona/Widgets/details.dart';
 import 'package:flutter/material.dart';
 
 class Around extends StatefulWidget {
@@ -35,4 +31,4 @@ class _AroundState extends State<Around> {
       ),
    );
   }
-}
+} 

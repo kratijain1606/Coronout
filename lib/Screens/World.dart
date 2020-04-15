@@ -1,16 +1,18 @@
-import 'package:gocorona/Models/IndiaModel.dart';
-import 'package:gocorona/Services/IndiaData.dart';
+import 'package:gocorona/Models/worldmodel.dart';
+import 'package:gocorona/Services/reports.dart';
 import 'package:gocorona/Widgets/chart.dart';
 import 'package:gocorona/Widgets/details.dart';
 import 'package:flutter/material.dart';
+import 'package:loading/indicator/ball_pulse_indicator.dart';
+import 'package:loading/loading.dart';
 
-class IndiaStats extends StatefulWidget {
+class World extends StatefulWidget {
   @override
-  _IndiaStatsState createState() => _IndiaStatsState();
+  _WorldState createState() => _WorldState();
 }
 
-class _IndiaStatsState extends State<IndiaStats> {
-  DistrictData districtData;
+class _WorldState extends State<World> {
+  Report _report;
   int fallback = 0;
 
   @override
@@ -20,10 +22,10 @@ class _IndiaStatsState extends State<IndiaStats> {
   }
 
   void initialise() async {
-    DistrictData _temp = await getDistrictData();
+    Report _temp = await getReport();
 
     setState(() {
-      districtData = _temp;
+      _report = _temp;
     });
   }
 
@@ -32,7 +34,7 @@ class _IndiaStatsState extends State<IndiaStats> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'DistrictDatas',
+          'Reports',
           style: Theme.of(context).textTheme.title,
         ),
         backgroundColor: Colors.white,
@@ -40,17 +42,26 @@ class _IndiaStatsState extends State<IndiaStats> {
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
       ),
-      body: SafeArea(
+      body: _report != null
+          ? SafeArea(
               child: SingleChildScrollView(
                 child: Container(
                   color: Colors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Text(
-                              'Confirmed State - ${districtData.state}',
+                      PieChartSample2(_report),
+                      _report.updatedDate != null
+                          ? Text(
+                              'Last Updated - ${_report.updatedDate} ${_report.updatedTime}',
                               style: Theme.of(context).textTheme.overline,
+                            )
+                          : SizedBox(),
+                      SizedBox(
+                        height: 16.0,
                       ),
+                      Details(report: _report),
+                      
                       SizedBox(
                         height: 16.0,
                       ),
@@ -59,13 +70,9 @@ class _IndiaStatsState extends State<IndiaStats> {
                 ),
               ),
             )
-          /*:Center(
-              child: Image(
-                image: new AssetImage("assets/images/loader.gif"),
-                height: 100,
-                width: 100,
-              ),
-            ),*/
+          : Center(
+              child: Loading(indicator: BallPulseIndicator(), size: 100.0, color: Colors.blue,),
+            ),
     );
   }
 }

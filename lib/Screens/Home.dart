@@ -1,8 +1,9 @@
-
-import 'package:gocorona/Services/reports.dart';
-import 'package:gocorona/Widgets/chart.dart';
-import 'package:gocorona/Widgets/details.dart';
 import 'package:flutter/material.dart';
+import 'package:gocorona/Models/newsmodel.dart';
+import 'package:gocorona/Services/news.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:loading/loading.dart';
+import 'package:loading/indicator/ball_pulse_indicator.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
+  List<ArtContent> articles;
   @override
   void initState() {
     super.initState();
@@ -18,21 +19,90 @@ class _HomeState extends State<Home> {
   }
 
   void initialise() async {
+    List<ArtContent> _temp = await News().getNews();
+    print(_temp);
+    setState(() {
+      articles = _temp;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Home',
-          style: Theme.of(context).textTheme.title,
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        iconTheme: IconThemeData(color: Colors.black),
-        centerTitle: true,
-      ),
-   );
+    return articles != null
+        ? Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(
+              title: Text(
+                'Home',
+                style: TextStyle(color: Colors.black),
+              ),
+              centerTitle: true,
+              backgroundColor: Colors.white,
+              iconTheme: IconThemeData(color: Colors.black),
+              elevation: 0.0,
+            ),
+            body: Column(
+              children: <Widget>[
+                Container(
+                  child: Row(
+                    children: <Widget>[],
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    itemCount: articles.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          child: GestureDetector(
+                              onTap: () => {launchUrl(articles[index].newsUrl)},
+                              child: Card(
+                                  semanticContainer: true,
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Image.network(
+                                          articles[index].newsimage + "",
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width -
+                                              40,
+                                          color: Color.fromRGBO(
+                                              255, 255, 255, 0.6),
+                                          colorBlendMode: BlendMode.modulate),
+                                      Positioned.fill(
+                                          child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 15, horizontal: 5),
+                                        child: Align(
+                                          alignment: Alignment.bottomCenter,
+                                          child: Text(articles[index].title,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w800,
+                                                  fontSize: 15)),
+                                        ),
+                                      ))
+                                    ],
+                                  ))));
+                    },
+                  ),
+                )
+              ],
+            ))
+        : Scaffold(
+            body: Center(
+              child: Loading(indicator: BallPulseIndicator(), size: 100.0, color: Colors.blue,),
+            ),
+          );
+  }
+}
+
+void launchUrl(url) async {
+  print(url);
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }

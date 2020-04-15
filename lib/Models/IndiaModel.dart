@@ -1,18 +1,12 @@
 import 'dart:core';
-class DistrictData {
+
+class States{
   String state;
+  List<Districts> districtdata;
+  States({this.state, this.districtdata});
+}
+class Districts{
   String district;
   int confirmed;
-  String lastUpdatedTime;
-  int deltaConfirmed;
-
-  DistrictData(
-    {
-      this.state,
-      this.district,
-      this.confirmed,
-      this.lastUpdatedTime,
-      this.deltaConfirmed
-    }
-  );
+  Districts({this.district, this.confirmed});
 }
