@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gocorona/Screens/DistrictReport.dart';
 import 'package:gocorona/Services/ireports.dart';
 import 'package:gocorona/Models/indiamodel.dart';
+import 'package:loading/loading.dart';
+import 'package:loading/indicator/ball_pulse_indicator.dart';
 
 class India extends StatefulWidget {
   @override
@@ -91,11 +93,7 @@ class _IndiaState extends State<India> {
             ))
         : Scaffold(
             body: Center(
-              child: Image(
-                image: new AssetImage("assets/images/loader.gif"),
-                height: 100,
-                width: 100,
-              ),
+              child: Loading(indicator: BallPulseIndicator(), size: 100.0, color: Colors.blue,),
             ),
           );
   }

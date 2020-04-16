@@ -3,6 +3,8 @@ import 'package:gocorona/Models/newsmodel.dart';
 import 'package:gocorona/Screens/Donate.dart';
 import 'package:gocorona/Services/news.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:loading/loading.dart';
+import 'package:loading/indicator/ball_pulse_indicator.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -98,11 +100,7 @@ class _HomeState extends State<Home> {
             ))
         : Scaffold(
             body: Center(
-              child: Image(
-                image: new AssetImage("assets/images/loader.gif"),
-                height: 100,
-                width: 100,
-              ),
+              child: Loading(indicator: BallPulseIndicator(), size: 100.0, color: Colors.blue,),
             ),
           );
   }
