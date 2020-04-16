@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                                   child: Stack(
                                     children: <Widget>[
                                       Image.network(
-                                          articles[index].newsimage + "",
+                                          articles[index].newsimage.toString(),
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width -
