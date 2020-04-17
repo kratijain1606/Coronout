@@ -12,19 +12,25 @@ class _SymptomsItemsState extends State<SymptomsItems> {
     return Column(
       children: <Widget>[
         getSymptomsItems(context, 'High Fever', 'fever'),
-        SizedBox(height: 18.0,),
+        SizedBox(
+          height: 18.0,
+        ),
         getSymptomsItems(context, 'Dry Cough', 'drycough'),
-        SizedBox(height: 18.0,),
+        SizedBox(
+          height: 18.0,
+        ),
         getSymptomsItems(context, 'Tiredness', 'tiredness'),
-        SizedBox(height: 18.0,),
+        SizedBox(
+          height: 18.0,
+        ),
         getSymptomsItems(context, 'Difficulty in Breathing', 'shortness'),
-        SizedBox(height: 18.0,),
-        
+        SizedBox(
+          height: 18.0,
+        ),
       ],
     );
   }
 }
-
 
 class PreventionItems extends StatefulWidget {
   @override
@@ -36,17 +42,27 @@ class _PreventionItemsState extends State<PreventionItems> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        getSymptomsItems(context, 'Wash hands often', 'wash' ),
-        SizedBox(height: 18.0,),
+        getSymptomsItems(context, 'Wash hands often', 'wash'),
+        SizedBox(
+          height: 18.0,
+        ),
         getSymptomsItems(context, 'Cough into elbow', 'elbow'),
-        SizedBox(height: 18.0,),
-        getSymptomsItems(context, "Don't touch your face frequently", 'notouchface'),
-        SizedBox(height: 18.0,),
+        SizedBox(
+          height: 18.0,
+        ),
+        getSymptomsItems(
+            context, "Don't touch your face frequently", 'notouchface'),
+        SizedBox(
+          height: 18.0,
+        ),
         getSymptomsItems(context, 'Keep safe distance', 'safedistance'),
-        SizedBox(height: 18.0,),
+        SizedBox(
+          height: 18.0,
+        ),
         getSymptomsItems(context, 'Stay home if you can', 'home'),
-        SizedBox(height: 18.0,),
-        
+        SizedBox(
+          height: 18.0,
+        ),
       ],
     );
   }
@@ -58,12 +74,12 @@ Widget getSymptomsItems(BuildContext context, String text, String imgSrc) {
         color: Colors.blueAccent,
         borderRadius: BorderRadius.all(Radius.circular(5.0))),
     child: ListTile(
+      contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       leading: Container(
         child: new CircleAvatar(
           backgroundImage: AssetImage("assets/images/$imgSrc.JPG"),
-          radius: 28.0,
+          radius: 25.0,
         ),
-        padding: const EdgeInsets.all(3.0), // borde width
       ),
       title: Text(
         text,
@@ -78,7 +94,7 @@ Widget getSymptomsItems(BuildContext context, String text, String imgSrc) {
   );
 }
 
-void launchUrl() async{
+void launchUrl() async {
   const url = 'https://www.who.int/news-room/q-a-detail/q-a-coronaviruses';
   if (await canLaunch(url)) {
     await launch(url);

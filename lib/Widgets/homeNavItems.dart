@@ -28,7 +28,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 context: context,
                 icon:Icons.local_hospital,
                 title: 'Prevention',
-                subTitle: 'Help you to avoid getting infected, Stay Safe.',
+                subTitle: 'Help you to avoid getting infected.',
                 navigate: 'prevention',
                 color: Colors.lightBlueAccent,
                 ),

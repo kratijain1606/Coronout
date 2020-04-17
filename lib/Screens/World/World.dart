@@ -3,8 +3,8 @@ import 'package:gocorona/Services/reports.dart';
 import 'package:gocorona/Widgets/chart.dart';
 import 'package:gocorona/Widgets/details.dart';
 import 'package:flutter/material.dart';
-import 'package:loading/indicator/ball_pulse_indicator.dart';
 import 'package:loading/loading.dart';
+import 'package:loading/indicator/ball_pulse_indicator.dart';
 
 class World extends StatefulWidget {
   @override
@@ -70,9 +70,11 @@ class _WorldState extends State<World> {
                 ),
               ),
             )
-          : Center(
+          : Scaffold(
+            body: Center(
               child: Loading(indicator: BallPulseIndicator(), size: 100.0, color: Colors.blue,),
             ),
+          )
     );
   }
 }
