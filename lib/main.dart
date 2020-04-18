@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blue/flutter_blue.dart';
 import 'package:gocorona/Screens/Around.dart';
 import 'package:gocorona/Screens/Home.dart';
 import 'package:gocorona/Screens/World.dart';
@@ -12,7 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() => runApp(Gocorona());
 
 class Gocorona extends StatelessWidget {
-  Future<int> checkFirstSeen() async {
+  
+Future<int> checkFirstSeen() async {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         bool _seen = (prefs.getBool('seen') ?? false);
 
@@ -37,12 +39,35 @@ class Gocorona extends StatelessWidget {
 
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
-
+  
   @override
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  final FlutterBlue flutterBlue = FlutterBlue.instance;
+
+  scanForDevices(){
+    flutterBlue.startScan();
+    var subscription = flutterBlue.scanResults.listen((results) {
+        for (ScanResult r in results) {
+            print('${r.device.id} ${r.device.name} found! rssi: ${r.rssi} ads: ${r.advertisementData.serviceUuids}');
+        }
+    });
+  }
+  ///Initialisation and listening to device state
+  void initState() {
+      super.initState();
+      print("hi");
+      flutterBlue.state.listen((state) {
+      if (state == BluetoothState.off) {
+        //Alert user to turn on bluetooth.
+      }
+      else if (state == BluetoothState.on) {
+        scanForDevices(); 
+      }
+    });
+  }
   int _selectedIndex = 2;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
