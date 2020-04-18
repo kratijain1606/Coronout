@@ -51,11 +51,22 @@ class _HomeState extends State<Home> {
             ),
             body: Column(
               children: <Widget>[
-                Container(
-                  child: Row(
-                    children: <Widget>[],
-                  ),
+                Image(
+                  image: AssetImage("assets/images/heroes.PNG"),
+                  width: 250.0,
+                  height: 250.0,
                 ),
+                Positioned(
+                  child: Text(
+                          "\"Not All Heroes Wear Cape \nThank you Doctors!!\"", 
+                          style: TextStyle(color: Colors.redAccent, fontSize: 20.0),
+                          textAlign: TextAlign.center,
+                          
+                         ),
+                  left: 25.0,
+                  right: 25.0,
+                ),
+                
                 Expanded(
                   child: ListView.builder(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
