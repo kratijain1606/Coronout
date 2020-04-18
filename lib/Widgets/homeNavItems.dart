@@ -18,7 +18,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 context: context,
                 icon: Icons.mood_bad,
                 title: 'Symptoms',
-                subTitle: 'Signs to Identify the risk of Infection',
+                subTitle: 'Signs to Identify the risk of Infection.',
                 navigate: 'symptoms',
                 color: Colors.deepPurpleAccent),
             SizedBox(
@@ -28,7 +28,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 context: context,
                 icon:Icons.local_hospital,
                 title: 'Prevention',
-                subTitle: 'Help you to avoid getting infected.',
+                subTitle: 'Help you to avoid getting infected. Stay Safe',
                 navigate: 'prevention',
                 color: Colors.lightBlueAccent,
                 ),

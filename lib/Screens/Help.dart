@@ -62,8 +62,8 @@ class _HelpState extends State<Help> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(5.0)),
                           ),
-                          height: 0.08 * height,
-                          width: 0.43 * width,
+                          height: 0.1 * height,
+                          width: 0.47 * width,
                           child: ListTile(
                             leading: Container(
                               child: new CircleAvatar(
@@ -97,8 +97,8 @@ class _HelpState extends State<Help> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(5.0)),
                           ),
-                          height: 0.08 * height,
-                          width: 0.43 * width,
+                          height: 0.1 * height,
+                          width: 0.47 * width,
                           child: ListTile(
                             trailing: Container(
                               child: new CircleAvatar(
