@@ -38,6 +38,7 @@ dependencies:
   introduction_screen: ^1.0.8
   dots_indicator: ^1.1.0
   flutter_blue: ^0.7.1+1
+  vibration: ^1.2.4
   flutter_dialogflow: ^0.1.2
   flutter_inappwebview:
     git:
