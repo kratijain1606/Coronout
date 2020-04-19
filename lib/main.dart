@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 import 'package:gocorona/Screens/Around.dart';
 import 'package:gocorona/Screens/Home.dart';
+import 'package:gocorona/Screens/Login.dart';
 import 'package:gocorona/Screens/World.dart';
 import 'package:gocorona/Screens/India.dart';
 import 'package:gocorona/Screens/SymptomsPage.dart';
@@ -20,7 +21,7 @@ void main() => runApp(Gocorona());
 
 class Gocorona extends StatelessWidget {
   
-Future<int> checkFirstSeen() async {
+  Future<int> checkFirstSeen() async {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         bool _seen = (prefs.getBool('seen') ?? false);
 
@@ -30,6 +31,14 @@ Future<int> checkFirstSeen() async {
         await prefs.setBool('seen', true);
         return 0;
     }
+  Future<int> checkLogin() async {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        bool _login = (prefs.getBool('login') ?? false);
+        if (_login) 
+            return 1;
+        return 0;
+    }
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,8 +46,10 @@ Future<int> checkFirstSeen() async {
       routes: {
         '/symptoms': (context) => SymptomsPage(),
         '/prevention': (context) => PreventionPage(),
+        '/homepage': (context) => MyStatefulWidget(),    
+        '/loginpage': (context) => Login(),        
       },
-      home: checkFirstSeen() != 1 ? MyStatefulWidget() : Welcome(),
+      home: checkFirstSeen() != 1 ? checkLogin() !=1 ? Login() : MyStatefulWidget() : Welcome(),
     );
   }
 }

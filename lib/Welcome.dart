@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gocorona/Screens/Login.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import 'main.dart';
@@ -13,7 +14,7 @@ class _WelcomeState extends State<Welcome> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => MyStatefulWidget()),
+      MaterialPageRoute(builder: (_) => Login()),
     );
   }
 

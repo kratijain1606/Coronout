@@ -1,4 +1,4 @@
-package com.example.gocorona
+package com.example.coronout
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
