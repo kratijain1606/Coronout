@@ -1,4 +1,4 @@
-# gocorona
+# Coronout
 
 A new Flutter project.
 
