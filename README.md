@@ -1,16 +1,50 @@
-# Coronout
+# Team Thugs Of Firangistaan
 
-A new Flutter project.
+## Coronout
+## Problem Statement:-
+We identified problem, as their was no proper solution, 
+- To check nearby grocery stores, 
+- To get connect with doctor or check symptoms.
+- While moving outdoors, social Distancing is measure issue, which general public tend to break.
+- Contact Tracing.
+- Communication in Crisis.
+- Circulation of fake news.
+
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+What things you need to install the software :
+* Get an OS
+* Install flutter
+* Android Studio / VSCode or any ide
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Running
+
+Run this in terminal
+```
+flutter pub get
+```
+connect to a device with USB debuggin on or use Android emulator
+```
+flutter run
+```
+
+## Video
+(https://www.youtube.com/watch?v=Du6BkbmzBms)
+
+## Authors
+
+* **Abhi Jain** 
+* **Ajinkya Taranekar** 
+* **Krati Jain**
+* **Yash Tayal**
+
+## License
+
+This project is licensed under the Thugs of Firangistaan.
+
