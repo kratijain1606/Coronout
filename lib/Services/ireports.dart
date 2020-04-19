@@ -1,6 +1,7 @@
 import 'dart:convert';
+import 'package:gocorona/Models/IndiaModel.dart';
 import 'package:http/http.dart';
-import 'package:gocorona/Models/indiamodel.dart';
+import 'package:intl/intl.dart';
 
 final String link = "https://api.covid19india.org/v2/state_district_wise.json";
 
@@ -29,6 +30,35 @@ class IReport {
       }
     } catch (e) {
       print("Error");
+      print(e);
+    }
+    return reports;
+  }
+Future<List<StateWiseConfirmed>> getStateWiseTotalCases() async {
+    List<StateWiseConfirmed> reports =[];
+    String link = "https://api.covid19india.org/data.json";
+    try {
+      Response response = await get(link);
+      Map<String,dynamic> data = jsonDecode(response.body);
+      List cases = data["statewise"];
+      print(cases);
+      for (int i = 0; i<cases.length; i++){
+        StateWiseConfirmed report = new StateWiseConfirmed(
+          confirmed : cases[i]["confirmed"],
+          deaths : cases[i]["deaths"],
+          recovered : cases[i]["recovered"],
+          active: cases[i]["active"],
+          state : cases[i]["state"],
+          deltaconfirmed: cases[i]["deltaconfirmed"],
+          deltadeaths: cases[i]["deltadeaths"],
+          deltarecovered: cases[i]["deltarecovered"]
+        );
+        print(report);
+        reports.add(report);
+      }
+      print(reports[1].deaths);
+    } catch (e) {
+      print("Error5");
       print(e);
     }
     return reports;

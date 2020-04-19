@@ -1,4 +1,4 @@
-import 'package:gocorona/Models/indiamodel.dart';
+import 'package:gocorona/Models/IndiaModel.dart';
 import 'package:flutter/material.dart';
 import 'package:loading/loading.dart';
 import 'package:loading/indicator/ball_pulse_indicator.dart';
@@ -65,8 +65,10 @@ class _DistrictReportState extends State<DistrictReport> {
                       return Card(
                         child: ListTile(
                             title: Text(_filteredReports[index].district),
-                            trailing: Text("Cases: " +
-                                _filteredReports[index].confirmed.toString())),
+                            trailing: Text("Confirmed: " +
+                                _filteredReports[index].confirmed.toString(),
+                                style: TextStyle(color: Colors.red),
+                                )),
                       );
                     },
                   ),
@@ -79,8 +81,10 @@ class _DistrictReportState extends State<DistrictReport> {
                       return Card(
                         child: ListTile(
                             title: Text(widget.lst[index].district),
-                            trailing: Text("Cases: " +
-                                widget.lst[index].confirmed.toString())),
+                            trailing: Text("Confirm Cases: \n" +
+                                widget.lst[index].confirmed.toString(),
+                                style: TextStyle(color: Colors.red),
+                                )),
                       );
                     },
                   ))
